@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Создайте свой уникальный плейлист">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Конструктор плейлистов</title>
+</head>
+<body>
+  <header class="header" role="banner">
+  </header>
+  <main class="container" role="main">
+    <section class="cover">
+      <div class="cover__image" aria-label="Обложка плейлиста"></div>
+      <h1 class="cover__heading">Playlist</h1>
+    </section>
+    <section class="block form" aria-labelledby="add-song-heading">
+      <h3 id="add-song-heading">Add Song</h3>
+      <div class="input">
+        <input type="text" placeholder="Название" class="input__text input__text_type_song" aria-label="Название песни">
+        <input type="text" placeholder="Исполнитель" class="input__text input__text_type_artist" aria-label="Исполнитель">
+        <button class="form__submit-btn form__submit-btn_action_add" aria-label="Добавить песню">
+          <i class="fas fa-plus"></i> Добавить
+        </button>
+      </div>
+    </section>
+    <section class="block form" aria-labelledby="added-songs-heading">
+      <h3 id="added-songs-heading">Added</h3>
+      <div class="no-songs">
+        <p class="no-songs__text">Нет добавленных песен</p>
+      </div>
+      <div class="songs-container"></div>
+      <div class="form__submit">
+        <button class="form__submit-btn form__submit-btn_action_reset" aria-label="Очистить плейлист">
+          <i class="fas fa-trash"></i> Очистить плейлист
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
