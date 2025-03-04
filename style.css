@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #a2e4e9;
+    --hover-color: #94cfd3;
+    --text-color: #333;
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  html, body {
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  input, button {
+    border: none;
+  }
+  
+  .header {
+    max-width: 468px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .container {
+    max-width: 468px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cover {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 20px;
+  }
+  
+  .cover__image {
+    width: 110px;
+    height: 110px;
+    background-image: url(https://img.freepik.com/free-photo/fun-party-with-dj_23-2151108197.jpg?t=st=1741097724~exp=1741101324~hmac=0a2b6457f3caf3f4d1caa052cb25b5b7b4266d1740081d10517c4e096e6b6cc0&w=1060);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+  }
+  
+  .cover__heading {
+    margin-left: 30px;
+    font-size: 2.5em;
+    color: var(--text-color);
+  }
+  
+  .block {
+    margin-top: 60px;
+    border-radius: 3px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  h3 {
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .input {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .input__text {
+    font-size: 0.8em;
+    width: 150px;
+    height: 50px;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input__text:focus {
+    outline: none;
+    border-color: var(--hover-color);
+  }
+  
+  .input__text::placeholder {
+    color: #d3d3d3;
+  }
+  
+  .form__submit-btn {
+    font-size: 0.8em;
+    width: 150px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form__submit-btn:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .form__submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  
+  .no-songs {
+    height: 70px;
+    display: flex;
+  }
+  
+  .no-songs_hidden {
+    display: none;
+  }
+  
+  .no-songs__text {
+    margin: auto;
+    text-align: center;
+    font-size: 1.2em;
+    color: #d3d3d3;
+  }
+  
+  .song {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .song__artist {
+    margin-right: 10px;
+  }
+  
+  .song__like {
+    border: none;
+    background: url(https://www.svgrepo.com/show/476608/like.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    right: 10px;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .song__like:hover {
+    transform: scale(1.3);
+  }
+  
+  .song__like_active {
+    opacity: 1;
+    background: url(https://www.svgrepo.com/show/412229/like.svg) center no-repeat;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    .cover {
+      flex-direction: column;
+      align-items: center;
+    }
+    .cover__image {
+      margin-bottom: 10px;
+    }
+    .input {
+      flex-direction: column;
+    }
+    .input__text, .form__submit-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
